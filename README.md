@@ -1,7 +1,7 @@
 # Goodreads Books
 
 ## Overview 
-This project aims to analyze Goodreads Books to answer some questions about books, explore relationships among different factors that affect reading and rating processes, and developing a recommendation system based on regression.
+This project aims to analyze Goodreads Books to answer some questions about books, explore relationships among different factors that affect reading and rating processes, and developing a regression model.
 
 ### Project Description
 The project consists of five main files (I am going to update them regularly and add new files if needed)
