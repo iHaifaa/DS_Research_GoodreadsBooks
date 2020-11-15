@@ -1,2 +1,0 @@
-# Estimation
-# Hypothesis Testing
