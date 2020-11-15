@@ -1,6 +1,8 @@
 ---
-title: "R Notebook"
+title: "Exploratory Data Analysis (EDA)"
 output: html_notebook
+date: 21/10/2020
+author: Haifaa Alzahrani
 ---
 ## Goodreads Books Analysis 
 ## Exploratory Data Analysis (EDA)

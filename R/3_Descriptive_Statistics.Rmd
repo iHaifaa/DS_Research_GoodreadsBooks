@@ -1,12 +1,9 @@
 ---
-title: "R Notebook"
+title: "Descriptive Statistics"
 output: html_notebook
+date: 21/10/2020
+author: Haifaa Alzahrani
 ---
-
-## Goodreads_Books 
-## Descriptive Statistics
-## Haifaa Alzahrani
-## 21/10/2020
 
 ### Theoretical Probability Distribution
 It is empirical frequency distribution (on the sample = dataset),

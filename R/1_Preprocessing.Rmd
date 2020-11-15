@@ -1,12 +1,9 @@
 ---
-title: "1_Preprocessing"
+title: "Preprocessing"
 output: html_notebook
+date: 21/10/2020
+author: Haifaa Alzahrani
 ---
-
-## Goodreads Books Analysis 
-## Data Preprocessing
-## Haifaa Alzahrani
-## 21/10/2020
 
 ### Initialise libraries
 ```{r}
