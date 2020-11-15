@@ -1,0 +1,96 @@
+---
+title: "1_Preprocessing"
+output: html_notebook
+---
+
+## Goodreads Books Analysis 
+## Data Preprocessing
+## Haifaa Alzahrani
+## 21/10/2020
+
+### Initialise libraries
+```{r}
+library(tidyverse)
+library(janitor) # To use remove_empty
+library(lubridate) # To format the date
+```
+
+### Loading datasets
+```{r}
+dataset1 <- read_csv("~/MISK_DSI/R/DS_Research_GoodreadsBooks/Data/books.csv") # Tibble
+#dataset1 <- as_tibble(dataset) #Enhanced dataframe
+glimpse(dataset1)
+
+# dataset2 <- rio::import("Goodreads_Books_Recommendation/Data/goodreads_books.csv")
+```
+
+```{r}
+dataset2 <- read_csv("~/MISK_DSI/R/DS_Research_GoodreadsBooks/Data/goodreads_books.csv")
+glimpse(dataset2)
+```
+
+# Removing unwanted columns and observations
+
+```{r}
+dim(dataset1)
+dim(dataset2)
+
+# Remove empties
+dataset1 <- remove_empty(dataset1)
+dataset2 <- remove_empty(dataset2)
+
+# Remove duplicated observations or books with no isbn
+dataset1 <- dataset1 %>% 
+  distinct(isbn, .keep_all = TRUE) # was 11,131 rows - became 11,123 rows
+dataset2 <- dataset2 %>% 
+  distinct(isbn, .keep_all = TRUE) # was 52199 rows - became 40317 rows
+
+# Remove unwanted columns
+dataset1 <- dataset1 %>% 
+  select(-isbn13)
+dataset2 <- dataset2 %>% 
+  select(-isbn13)
+
+dim(dataset1)
+dim(dataset2)
+```
+
+```{r}
+# Format publication date to only include the year
+head(dataset1$publication_date)
+
+dataset1$publication_date <- 
+  year(mdy(dataset1$publication_date))
+  #OR
+  #substring(dataset1$publication_date, nchar(as.character(dataset1$publication_date)) - 3)
+
+head(dataset1$publication_date)
+```
+
+```{r}
+# Add additional columns (awards and genres)  to first dataset based on isbn
+dim(dataset1)
+dim(dataset2)
+
+dataset2 <- dataset2 %>% 
+  select(isbn, genre_and_votes, awards) 
+dataset1 <- 
+  left_join(dataset1, dataset2, by = "isbn")
+
+dim(dataset1)
+dim(dataset2)
+```
+
+```{r}
+# Keep only the first author (the others either a translated author name, a translator, etc)
+dataset1$authors <- 
+  word(dataset1$authors,1,sep = "\\/")
+```
+
+
+```{r}
+# Save the resulted dataframe as csv
+write.csv(dataset1, "~/MISK_DSI/R/DS_Research_GoodreadsBooks/Data/full_books.csv")
+```
+
+
