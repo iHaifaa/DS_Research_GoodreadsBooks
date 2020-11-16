@@ -17,7 +17,7 @@ import seaborn as sns # High level Plotting
 
 # %%
 # Read the dataset
-books = pd.read_csv("~/MISK_DSI/R/DS_Research_GoodreadsBooks/Data/full_books_Python.csv")
+books = pd.read_csv("~/MISK_DSI/R/DS_Research_GoodreadsBooks/Data/full_books.csv")
 
 # Overview on descriptive statistics
 books.describe()
