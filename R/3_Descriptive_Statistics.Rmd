@@ -10,7 +10,7 @@ It is empirical frequency distribution (on the sample = dataset),
 which reflects the distributions of a variable that we observe in a given sample.
 
 ```{r}
-# Overview 
+# Overview on descriptive statistics
 summary(dataset)
 ```
 Average rating distribution.
