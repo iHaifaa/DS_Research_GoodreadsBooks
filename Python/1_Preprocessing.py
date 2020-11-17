@@ -44,6 +44,7 @@ dataset2.info()
 # %% 
 # Format publication date to only include the year
 dataset1['publication_date'] = dataset1['publication_date'].str.strip().str[-4:]
+dataset1['publication_date'].astype(int)
 
 #import datetime as dt
 #dataset1['publication_date'] = pd.to_datetime(dataset1.publication_date)
@@ -74,9 +75,17 @@ dataset.head()
 dataset['authors'] = dataset['authors'].str.split('\/').str[1].str.strip()
 
 # %%
+# Drop unwanted columns and rows
+dataset = dataset.dropna(axis=1, how='all') #drop any column filled only with NaN 
+#books = books.drop(['Unnamed: 0'], axis = 1)
+dataset = dataset.drop_duplicates()
+
+# %%
 # Save the resulted dataframe as csv
 dataset.to_csv("~/MISK_DSI/R/DS_Research_GoodreadsBooks/Data/full_books_Python.csv")
 
 # %%
 dataset.head()
 dataset.shape
+
+# %%

@@ -16,9 +16,6 @@ import matplotlib.pyplot as plt # Low level plotting
 import seaborn as sns # High level Plotting
 
 # %%
-# Read the dataset
-books = pd.read_csv("~/MISK_DSI/R/DS_Research_GoodreadsBooks/Data/full_books.csv")
-
 # Overview on descriptive statistics
 books.describe()
 
@@ -29,7 +26,6 @@ sns.distplot(books['average_rating'])
 # %% 
 # Ratings count distribution.
 sns.distplot(books['ratings_count'])
-
 
 # %% 
 # Review count distribution
