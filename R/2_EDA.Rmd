@@ -90,15 +90,6 @@ dataset %>%
   top_n(25)  %>%
   select(title, authors, text_reviews_count, average_rating)
 ```
-Popular books that got the highest 25 ratings.
-To know the most favorite books.
-```{r}
-dataset %>%
-  group_by(title) %>%
-  arrange(-average_rating) %>%
-  top_n(25)  %>%
-  select(title, authors, average_rating)
-```
 Top 25 years according to the number of the published books
 ```{r}
 # Inaccurate results!
