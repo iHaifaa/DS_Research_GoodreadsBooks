@@ -5,7 +5,7 @@ date: 21/10/2020
 author: Haifaa Alzahrani
 ---
 
-Note: The used dataset is not reliable, it has duplication issues and needs to manually verified. However, the aim of this project is just to apply the skills rather than building reliable model. 
+Note: The used dataset is not reliable, it has duplication issues and needs to manually verified. However, the aim of this project is just to apply the skills rather than accurately analysing the data or building reliable model. 
 
 ### Initialise libraries
 ```{r}
